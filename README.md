@@ -1,2 +1,3 @@
 # My-List
-My list of things app.
+
+App to make lists easily.
