@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
             <div class="col-lg-12">
                 <form data-bind="submit: add">
                     <div class="form-group">
-                        <input id="entry" required="required" maxlength="100" data-bind="value: entry" class="form-control form-control-lg" placeholder="Say something..." type="text">
+                        <input id="entry" autocomplete="off" required="required" maxlength="100" data-bind="value: entry" class="form-control form-control-lg" placeholder="Say something..." type="text">
                     </div>
                     <button id="send-btn" type="submit" class="btn btn-success btn-lg">Send</button>
                 </form>
@@ -33,10 +34,19 @@
             <div class="col-lg-12">
                 <div class="list-group" data-bind="foreach: list, visible: list().length > 0">
                     <a class="list-group-item">
-                        <strong class="lead" data-bind="text: title"></strong>
-                        <button class="close" type="button" data-bind="click: $parent.remove">
-                            <span>&times;</span>
-                        </button>
+                        <div class="row">
+                            <div class="col-9">
+                                <strong class="lead" data-bind="text: title"></strong>
+                            </div>
+                            <div class="col-2">
+                                <small class="text-muted" data-bind="text: moment(date).fromNow()"></small>
+                            </div>
+                            <div class="col-1">
+                                <button class="close" type="button" data-bind="click: $parent.remove">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>

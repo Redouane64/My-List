@@ -1,6 +1,7 @@
-function Entry(title) {
+function Entry(title, date) {
     let self = this;
     self.title = title;
+    self.date = date;
 };
 
 function MyListViewModel() {
@@ -12,7 +13,7 @@ function MyListViewModel() {
         new Entry("Be nice to people.")
     ]);
     self.add = function (data) {
-        self.list.push(new Entry(data.entry.value));
+        self.list.push(new Entry(data.entry.value, new Date()));
         self.entry("");
     };
     self.remove = function (data) {
