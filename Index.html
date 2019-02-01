@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="node_modules/knockout/build/output/knockout-latest.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-lg-3">
+                <h1 class="display-4">My List</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form data-bind="submit: add">
+                    <div class="form-group">
+                        <input id="entry" required="required" maxlength="100" data-bind="value: entry" class="form-control form-control-lg" placeholder="Say something..." type="text">
+                    </div>
+                    <button id="send-btn" type="submit" class="btn btn-success btn-lg">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="list-group" data-bind="foreach: list, visible: list().length > 0">
+                    <a class="list-group-item">
+                        <strong class="lead" data-bind="text: title"></strong>
+                        <button class="close" type="button" data-bind="click: $parent.remove">
+                            <span>&times;</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+</body>
+</html>

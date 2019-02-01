@@ -1,0 +1,7 @@
+.row {
+    margin: 1em;
+}
+
+#send-btn {
+    display: none;
+}

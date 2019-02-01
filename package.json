@@ -1,0 +1,17 @@
+{
+  "name": "my-list-app",
+  "version": "1.0.0",
+  "description": "App for making lists.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Redouane Sobaihi",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^1.9.1",
+    "knockout": "^3.4.2",
+    "popper.js": "^1.14.7"
+  }
+}
